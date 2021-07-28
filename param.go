@@ -35,7 +35,7 @@ type MediaParamCharacters struct {
 // CharacterParamMedia is character param for media.
 type CharacterParamMedia struct {
 	Type    MediaType
-	OnList  bool
+	OnList  *bool
 	Page    int
 	PerPage int
 	Sort    []MediaSort
@@ -44,7 +44,7 @@ type CharacterParamMedia struct {
 // StaffParamStaffMedia is staff param for staff media.
 type StaffParamStaffMedia struct {
 	Type    MediaType
-	OnList  bool
+	OnList  *bool
 	Page    int
 	PerPage int
 	Sort    []MediaSort
@@ -59,7 +59,7 @@ type StaffParamCharacters struct {
 
 // StaffParamCharacterMedia is staff param for character media.
 type StaffParamCharacterMedia struct {
-	OnList  bool
+	OnList  *bool
 	Page    int
 	PerPage int
 	Sort    []MediaSort
@@ -74,14 +74,14 @@ type MediaParamStaff struct {
 
 // MediaParamStudios is media param for studios.
 type MediaParamStudios struct {
-	IsMain bool
+	IsMain *bool
 	Sort   []StudioSort
 }
 
 // StudioParamMedia is studio param for media.
 type StudioParamMedia struct {
-	IsMain  bool
-	OnList  bool
+	IsMain  *bool
+	OnList  *bool
 	Page    int
 	PerPage int
 	Sort    []MediaSort
@@ -89,7 +89,7 @@ type StudioParamMedia struct {
 
 // MediaParamAiringSchedule is media param for airing schedule.
 type MediaParamAiringSchedule struct {
-	NotYetAired bool
+	NotYetAired *bool
 	Page        int
 	PerPage     int
 }
@@ -98,7 +98,7 @@ type MediaParamAiringSchedule struct {
 type MediaParamTrends struct {
 	Page      int
 	PerPage   int
-	Releasing bool
+	Releasing *bool
 	Sort      []MediaTrendSort
 }
 
@@ -142,12 +142,12 @@ type PageParamMedia struct {
 	Duration            int
 	Chapters            int
 	Volumes             int
-	IsAdult             bool
+	IsAdult             *bool
 	Genre               string
 	Tag                 string
 	MinimumTagRank      int
 	TagCategory         string
-	OnList              bool
+	OnList              *bool
 	LicensedBy          string
 	AverageScore        int
 	Popularity          int
@@ -200,7 +200,7 @@ type PageParamMedia struct {
 // PageParamCharacters is page param for characters.
 type PageParamCharacters struct {
 	ID         int
-	IsBirthday bool
+	IsBirthday *bool
 	Search     string
 	IDNot      int
 	IDIn       []int
@@ -211,7 +211,7 @@ type PageParamCharacters struct {
 // PageParamStaff is page param for staff.
 type PageParamStaff struct {
 	ID         int
-	IsBirthday bool
+	IsBirthday *bool
 	Search     string
 	IDNot      int
 	IDIn       []int

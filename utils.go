@@ -28,6 +28,10 @@ func FieldObject(key string, params map[string]interface{}, fields ...string) st
 	if params != nil || len(params) > 0 {
 		var paramArr []string
 		for k, p := range params {
+			if p == nil {
+				continue
+			}
+
 			switch reflect.TypeOf(p).Kind() {
 			case reflect.Slice, reflect.Array:
 				v := reflect.ValueOf(p)
@@ -45,6 +49,10 @@ func FieldObject(key string, params map[string]interface{}, fields ...string) st
 			case reflect.Int:
 				if reflect.ValueOf(p).Int() != 0 {
 					paramArr = append(paramArr, fmt.Sprintf("%v:%v", k, p))
+				}
+			case reflect.Ptr:
+				if !reflect.ValueOf(p).IsNil() {
+					paramArr = append(paramArr, fmt.Sprintf("%v:%v", k, reflect.ValueOf(p).Elem()))
 				}
 			default:
 				paramArr = append(paramArr, fmt.Sprintf("%v:%v", k, p))

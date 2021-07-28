@@ -248,8 +248,8 @@ func CharacterFieldMedia(param CharacterParamMedia, field MediaConnectionField, 
 		"page":    param.Page,
 		"perPage": param.PerPage,
 		"type":    param.Type,
-		// "onList":  param.OnList,
-		"sort": param.Sort,
+		"onList":  param.OnList,
+		"sort":    param.Sort,
 	}, str...))
 }
 
@@ -334,8 +334,8 @@ func StaffFieldStaffMedia(param StaffParamStaffMedia, field MediaConnectionField
 		str = append(str, string(f))
 	}
 	return StaffField(FieldObject("staffMedia", QueryParam{
-		"type": param.Type,
-		// "onList":  param.OnList,
+		"type":    param.Type,
+		"onList":  param.OnList,
 		"page":    param.Page,
 		"perPage": param.PerPage,
 		"sort":    param.Sort,
@@ -365,7 +365,7 @@ func StaffFieldCharacterMedia(param StaffParamCharacterMedia, field MediaConnect
 		"page":    param.Page,
 		"perPage": param.PerPage,
 		"sort":    param.Sort,
-		// "onList":  param.OnList,
+		"onList":  param.OnList,
 	}, str...))
 }
 
@@ -1184,8 +1184,8 @@ func MediaFieldStudios(param MediaParamStudios, field StudioConnectionField, fie
 		str = append(str, string(f))
 	}
 	return MediaField(FieldObject("studios", QueryParam{
-		// "isMain": param.IsMain,
-		"sort": param.Sort,
+		"isMain": param.IsMain,
+		"sort":   param.Sort,
 	}, str...))
 }
 
@@ -1244,8 +1244,8 @@ func StudioFieldMedia(param StudioParamMedia, field MediaConnectionField, fields
 		str = append(str, string(f))
 	}
 	return StudioField(FieldObject("media", QueryParam{
-		// "isMain": param.IsMain,
-		// "onList": param.OnList,
+		"isMain":  param.IsMain,
+		"onList":  param.OnList,
 		"page":    param.Page,
 		"perPage": param.PerPage,
 		"sort":    param.Sort,
@@ -1297,9 +1297,9 @@ func MediaFieldAiringSchedule(param MediaParamAiringSchedule, field AiringSchedu
 		str = append(str, string(f))
 	}
 	return MediaField(FieldObject("airingSchedule", QueryParam{
-		// "notYetAired": param.NotYetAired,
-		"page":    param.Page,
-		"perPage": param.PerPage,
+		"notYetAired": param.NotYetAired,
+		"page":        param.Page,
+		"perPage":     param.PerPage,
 	}, str...))
 }
 
@@ -1359,10 +1359,10 @@ func MediaFieldTrends(param MediaParamTrends, field MediaTrendConnectionField, f
 		str = append(str, string(f))
 	}
 	return MediaField(FieldObject("trends", QueryParam{
-		"page":    param.Page,
-		"perPage": param.PerPage,
-		// "releasing": param.Releasing,
-		"sort": param.Sort,
+		"page":      param.Page,
+		"perPage":   param.PerPage,
+		"releasing": param.Releasing,
+		"sort":      param.Sort,
 	}, str...))
 }
 
@@ -1843,7 +1843,7 @@ func PageFieldMedia(param PageParamMedia, field MediaField, fields ...MediaField
 		"popularity_lesser":    param.PopularityLesser,
 		"source_in":            param.SourceIn,
 		"sort":                 param.Sort,
-		// "onList":param.OnList,
+		"onList":               param.OnList,
 	}, str...))
 }
 
@@ -1854,13 +1854,13 @@ func PageFieldCharacters(param PageParamCharacters, field CharacterField, fields
 		str = append(str, string(f))
 	}
 	return PageField(FieldObject("characters", QueryParam{
-		"search": toQueryString(param.Search),
-		"id":     param.ID,
-		// "isBirthday": param.IsBirthday,
-		"id_not":    param.IDNot,
-		"id_in":     param.IDIn,
-		"id_not_in": param.IDNotIn,
-		"sort":      param.Sort,
+		"search":     toQueryString(param.Search),
+		"id":         param.ID,
+		"isBirthday": param.IsBirthday,
+		"id_not":     param.IDNot,
+		"id_in":      param.IDIn,
+		"id_not_in":  param.IDNotIn,
+		"sort":       param.Sort,
 	}, str...))
 }
 
@@ -1871,12 +1871,12 @@ func PageFieldStaff(param PageParamStaff, field StaffField, fields ...StaffField
 		str = append(str, string(f))
 	}
 	return PageField(FieldObject("staff", QueryParam{
-		"search": toQueryString(param.Search),
-		"id":     param.ID,
-		// "isBirthday": param.IsBirthday,
-		"id_not":    param.IDNot,
-		"id_in":     param.IDIn,
-		"id_not_in": param.IDNotIn,
-		"sort":      param.Sort,
+		"search":     toQueryString(param.Search),
+		"id":         param.ID,
+		"isBirthday": param.IsBirthday,
+		"id_not":     param.IDNot,
+		"id_in":      param.IDIn,
+		"id_not_in":  param.IDNotIn,
+		"sort":       param.Sort,
 	}, str...))
 }

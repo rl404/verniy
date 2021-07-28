@@ -4,6 +4,7 @@ package verniy
 func (c *Client) SearchAnime(query PageParamMedia, page int, perPage int, fields ...MediaField) (*Page, error) {
 	query.Type = TypeAnime
 	if len(fields) == 0 {
+		isMain := true
 		fields = []MediaField{
 			MediaFieldID,
 			MediaFieldTitle(
@@ -29,7 +30,7 @@ func (c *Client) SearchAnime(query PageParamMedia, page int, perPage int, fields
 			MediaFieldAverageScore,
 			MediaFieldPopularity,
 			MediaFieldStudios(
-				MediaParamStudios{IsMain: true},
+				MediaParamStudios{IsMain: &isMain},
 				StudioConnectionFieldEdges(
 					StudioEdgeFieldIsMain,
 					StudioEdgeFieldNode(
