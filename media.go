@@ -118,7 +118,7 @@ func (c *Client) GetAnime(id int, fields ...MediaField) (*Media, error) {
 						StudioFieldIsAnimationStudio))),
 		}
 	}
-	return c.getMedia(id, TypeAnime, fields...)
+	return c.getMedia(id, MediaTypeAnime, fields...)
 }
 
 // GetAnimeCharacters to get list of characters in anime.
@@ -151,7 +151,7 @@ func (c *Client) GetAnimeCharacters(id int, page int, perPage int, fields ...Med
 						StaffFieldLanguage))),
 		}
 	}
-	return c.getMedia(id, TypeAnime, fields...)
+	return c.getMedia(id, MediaTypeAnime, fields...)
 }
 
 // GetAnimeStaff to get list of staff in anime.
@@ -172,7 +172,7 @@ func (c *Client) GetAnimeStaff(id int, page int, perPage int, fields ...MediaFie
 						StaffFieldImage(StaffImageFieldMedium)))),
 		}
 	}
-	return c.getMedia(id, TypeAnime, fields...)
+	return c.getMedia(id, MediaTypeAnime, fields...)
 }
 
 // GetAnimeStats to get anime stats.
@@ -184,7 +184,7 @@ func (c *Client) GetAnimeStats(id int, fields ...MediaField) (*Media, error) {
 				MediaStatsFieldStatusDistribution),
 		}
 	}
-	return c.getMedia(id, TypeAnime, fields...)
+	return c.getMedia(id, MediaTypeAnime, fields...)
 }
 
 // GetManga to get manga data.
@@ -260,7 +260,7 @@ func (c *Client) GetManga(id int, fields ...MediaField) (*Media, error) {
 			MediaFieldVolumes,
 		}
 	}
-	return c.getMedia(id, TypeManga, fields...)
+	return c.getMedia(id, MediaTypeManga, fields...)
 }
 
 // GetMangaCharacters to get list of characters in manga.
@@ -287,7 +287,7 @@ func (c *Client) GetMangaCharacters(id int, page int, perPage int, fields ...Med
 						CharacterFieldImage(CharacterImageFieldMedium)))),
 		}
 	}
-	return c.getMedia(id, TypeManga, fields...)
+	return c.getMedia(id, MediaTypeManga, fields...)
 }
 
 // GetMangaStaff to get list of staff in manga.
@@ -308,7 +308,7 @@ func (c *Client) GetMangaStaff(id int, page int, perPage int, fields ...MediaFie
 						StaffFieldImage(StaffImageFieldMedium)))),
 		}
 	}
-	return c.getMedia(id, TypeManga, fields...)
+	return c.getMedia(id, MediaTypeManga, fields...)
 }
 
 // GetMangaStats to get manga stats.
@@ -320,5 +320,5 @@ func (c *Client) GetMangaStats(id int, fields ...MediaField) (*Media, error) {
 				MediaStatsFieldStatusDistribution),
 		}
 	}
-	return c.getMedia(id, TypeManga, fields...)
+	return c.getMedia(id, MediaTypeManga, fields...)
 }

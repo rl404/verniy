@@ -56,7 +56,7 @@ func (c *Client) GetCharacter(id int, fields ...CharacterField) (*Character, err
 // GetCharacterAnime to get list of anime the character play.
 func (c *Client) GetCharacterAnime(id int, page int, perPage int) (*Character, error) {
 	return c.GetCharacter(id, CharacterFieldMedia(CharacterParamMedia{
-		Type:    TypeAnime,
+		Type:    MediaTypeAnime,
 		Page:    page,
 		PerPage: perPage,
 	},
@@ -88,7 +88,7 @@ func (c *Client) GetCharacterAnime(id int, page int, perPage int) (*Character, e
 // GetCharacterManga to get list of manga the character play.
 func (c *Client) GetCharacterManga(id int, page int, perPage int) (*Character, error) {
 	return c.GetCharacter(id, CharacterFieldMedia(CharacterParamMedia{
-		Type:    TypeManga,
+		Type:    MediaTypeManga,
 		Page:    page,
 		PerPage: perPage,
 	},

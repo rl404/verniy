@@ -109,10 +109,10 @@ func (c *Client) getStaffMedia(id int, mediaType MediaType, page int, perPage in
 
 // GetStaffAnime to get staff anime list.
 func (c *Client) GetStaffAnime(id int, page int, perPage int) (*Staff, error) {
-	return c.getStaffMedia(id, TypeAnime, page, perPage)
+	return c.getStaffMedia(id, MediaTypeAnime, page, perPage)
 }
 
 // GetStaffManga to get staff manga list.
 func (c *Client) GetStaffManga(id int, page int, perPage int) (*Staff, error) {
-	return c.getStaffMedia(id, TypeManga, page, perPage)
+	return c.getStaffMedia(id, MediaTypeManga, page, perPage)
 }

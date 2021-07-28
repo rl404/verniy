@@ -26,7 +26,7 @@ type clocker interface {
 }
 
 // New returns a new atomic based limiter.
-func New(rate int, interval time.Duration) *mutexLimiter {
+func New(rate int, interval time.Duration) Limiter {
 	perRequest := interval / time.Duration(rate)
 	return &mutexLimiter{
 		perRequest: perRequest,

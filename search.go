@@ -2,7 +2,7 @@ package verniy
 
 // SearchAnime to search anime.
 func (c *Client) SearchAnime(query PageParamMedia, page int, perPage int, fields ...MediaField) (*Page, error) {
-	query.Type = TypeAnime
+	query.Type = MediaTypeAnime
 	if len(fields) == 0 {
 		isMain := true
 		fields = []MediaField{
@@ -47,7 +47,7 @@ func (c *Client) SearchAnime(query PageParamMedia, page int, perPage int, fields
 
 // SearchManga to search manga.
 func (c *Client) SearchManga(query PageParamMedia, page int, perPage int, fields ...MediaField) (*Page, error) {
-	query.Type = TypeManga
+	query.Type = MediaTypeManga
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldID,

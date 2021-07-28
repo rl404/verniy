@@ -3,203 +3,220 @@ package verniy
 // MediaType is main media type.
 type MediaType string
 
+// Options for MediaType.
 const (
-	TypeAnime MediaType = "ANIME"
-	TypeManga MediaType = "MANGA"
+	MediaTypeAnime MediaType = "ANIME"
+	MediaTypeManga MediaType = "MANGA"
 )
 
 // MediaFormat is anime & manga format.
 type MediaFormat string
 
+// Options for MediaFormat.
 const (
-	FormatTv      MediaFormat = "TV"
-	FormatTvShort MediaFormat = "TV_SHORT"
-	FormatMovie   MediaFormat = "MOVIE"
-	FormatSpecial MediaFormat = "SPECIAL"
-	FormatOVA     MediaFormat = "OVA"
-	FormatONA     MediaFormat = "ONA"
-	FormatMusic   MediaFormat = "MUSIC"
-	FormatManga   MediaFormat = "MANGA"
-	FormatNovel   MediaFormat = "NOVEL"
-	FormatOneShot MediaFormat = "ONE_SHOT"
+	MediaFormatTv      MediaFormat = "TV"
+	MediaFormatTvShort MediaFormat = "TV_SHORT"
+	MediaFormatMovie   MediaFormat = "MOVIE"
+	MediaFormatSpecial MediaFormat = "SPECIAL"
+	MediaFormatOVA     MediaFormat = "OVA"
+	MediaFormatONA     MediaFormat = "ONA"
+	MediaFormatMusic   MediaFormat = "MUSIC"
+	MediaFormatManga   MediaFormat = "MANGA"
+	MediaFormatNovel   MediaFormat = "NOVEL"
+	MediaFormatOneShot MediaFormat = "ONE_SHOT"
 )
 
 // MediaStatus is anime & manga status.
 type MediaStatus string
 
+// Options for MediaStatus.
 const (
-	StatusFinished       MediaStatus = "FINISHED"
-	StatusReleasing      MediaStatus = "RELEASING"
-	StatusNotYetReleased MediaStatus = "NOT_YET_RELEASED"
-	StatusCancelled      MediaStatus = "CANCELLED"
-	StatusHiatus         MediaStatus = "HIATUS"
+	MediaStatusFinished       MediaStatus = "FINISHED"
+	MediaStatusReleasing      MediaStatus = "RELEASING"
+	MediaStatusNotYetReleased MediaStatus = "NOT_YET_RELEASED"
+	MediaStatusCancelled      MediaStatus = "CANCELLED"
+	MediaStatusHiatus         MediaStatus = "HIATUS"
 )
 
 // MediaSeason is anime season.
 type MediaSeason string
 
+// Options for MediaSeason.
 const (
-	SeasonWinter MediaSeason = "WINTER" // 12-2
-	SeasonSpring MediaSeason = "SPRING" // 3-5
-	SeasonSummer MediaSeason = "SUMMER" // 6-8
-	SeasonFall   MediaSeason = "FALL"   // 9-11
+	MediaSeasonWinter MediaSeason = "WINTER" // 12-2
+	MediaSeasonSpring MediaSeason = "SPRING" // 3-5
+	MediaSeasonSummer MediaSeason = "SUMMER" // 6-8
+	MediaSeasonFall   MediaSeason = "FALL"   // 9-11
 )
 
 // MediaSource is anime & manga source.
 type MediaSource string
 
+// Options for MediaSource.
 const (
-	SourceOriginal    MediaSource = "ORIGINAL"
-	SourceManga       MediaSource = "MANGA"
-	SourceLightNovel  MediaSource = "LIGHT_NOVEL"
-	SourceVisualNovel MediaSource = "VISUAL_NOVEL"
-	SourceVideoGame   MediaSource = "VIDEO_GAME"
-	SourceOther       MediaSource = "OTHER"
-	SourceNovel       MediaSource = "NOVEL"
-	SourceDoujinshi   MediaSource = "DOUJINSHI"
-	SourceAnime       MediaSource = "ANIME"
+	MediaSourceOriginal    MediaSource = "ORIGINAL"
+	MediaSourceManga       MediaSource = "MANGA"
+	MediaSourceLightNovel  MediaSource = "LIGHT_NOVEL"
+	MediaSourceVisualNovel MediaSource = "VISUAL_NOVEL"
+	MediaSourceVideoGame   MediaSource = "VIDEO_GAME"
+	MediaSourceOther       MediaSource = "OTHER"
+	MediaSourceNovel       MediaSource = "NOVEL"
+	MediaSourceDoujinshi   MediaSource = "DOUJINSHI"
+	MediaSourceAnime       MediaSource = "ANIME"
 )
 
 // MediaRankType is type of ranking.
 type MediaRankType string
 
+// Options for MediaRankType
 const (
-	RankRated   MediaRankType = "RATED"
-	RankPopular MediaRankType = "POPULAR"
+	MediaRankTypeRated   MediaRankType = "RATED"
+	MediaRankTypePopular MediaRankType = "POPULAR"
 )
 
 // MediaListStatus is user's anime & manga status.
 type MediaListStatus string
 
+// Options for MediaListStatus.
 const (
-	ListCurrent   MediaListStatus = "CURRENT"
-	ListPlanning  MediaListStatus = "PLANNING"
-	ListCompleted MediaListStatus = "COMPLETED"
-	ListDropped   MediaListStatus = "DROPPED"
-	ListPaused    MediaListStatus = "PAUSED"
-	ListRepeating MediaListStatus = "REPEATING"
+	MediaListStatusCurrent   MediaListStatus = "CURRENT"
+	MediaListStatusPlanning  MediaListStatus = "PLANNING"
+	MediaListStatusCompleted MediaListStatus = "COMPLETED"
+	MediaListStatusDropped   MediaListStatus = "DROPPED"
+	MediaListStatusPaused    MediaListStatus = "PAUSED"
+	MediaListStatusRepeating MediaListStatus = "REPEATING"
 )
 
 // MediaRelation is anime & manga relation.
 type MediaRelation string
 
+// Options for MediaRelation.
 const (
-	RelationAdaptation  MediaRelation = "ADAPTATION"
-	RelationPrequel     MediaRelation = "PREQUEL"
-	RelationSequel      MediaRelation = "SEQUEL"
-	RelationParent      MediaRelation = "PARENT"
-	RelationSideStory   MediaRelation = "SIDE_STORY"
-	RelationCharacter   MediaRelation = "CHARACTER"
-	RelationSummary     MediaRelation = "SUMMARY"
-	RelationAlternative MediaRelation = "ALTERNATIVE"
-	RelationSpinOff     MediaRelation = "SPIN_OFF"
-	RelationOther       MediaRelation = "OTHER"
-	RelationSource      MediaRelation = "SOURCE"
-	RelationCompilation MediaRelation = "COMPILATION"
-	RelationContains    MediaRelation = "CONTAINS"
+	MediaRelationAdaptation  MediaRelation = "ADAPTATION"
+	MediaRelationPrequel     MediaRelation = "PREQUEL"
+	MediaRelationSequel      MediaRelation = "SEQUEL"
+	MediaRelationParent      MediaRelation = "PARENT"
+	MediaRelationSideStory   MediaRelation = "SIDE_STORY"
+	MediaRelationCharacter   MediaRelation = "CHARACTER"
+	MediaRelationSummary     MediaRelation = "SUMMARY"
+	MediaRelationAlternative MediaRelation = "ALTERNATIVE"
+	MediaRelationSpinOff     MediaRelation = "SPIN_OFF"
+	MediaRelationOther       MediaRelation = "OTHER"
+	MediaRelationSource      MediaRelation = "SOURCE"
+	MediaRelationCompilation MediaRelation = "COMPILATION"
+	MediaRelationContains    MediaRelation = "CONTAINS"
 )
 
 // CharacterRole is type of character role.
 type CharacterRole string
 
+// Options for CharacterRole.
 const (
-	RoleMain       CharacterRole = "MAIN"
-	RoleSupporting CharacterRole = "SUPPORTING"
-	RoleBackground CharacterRole = "BACKGROUND"
+	CharacterRoleMain       CharacterRole = "MAIN"
+	CharacterRoleSupporting CharacterRole = "SUPPORTING"
+	CharacterRoleBackground CharacterRole = "BACKGROUND"
 )
 
 // UserTitleLanguage is default user anime & manga title language.
 type UserTitleLanguage string
 
+// Options for UserTitleLanguage.
 const (
-	LanguageRomaji          UserTitleLanguage = "ROMAJI"
-	LanguageEnglish         UserTitleLanguage = "ENGLISH"
-	LanguageNative          UserTitleLanguage = "NATIVE"
-	LanguageRomajiStylised  UserTitleLanguage = "ROMAJI_STYLISED"
-	LanguageEnglishStylised UserTitleLanguage = "ENGLISH_STYLISED"
-	LanguageNativeStylised  UserTitleLanguage = "NATIVE_STYLISED"
+	UserTitleLanguageRomaji          UserTitleLanguage = "ROMAJI"
+	UserTitleLanguageEnglish         UserTitleLanguage = "ENGLISH"
+	UserTitleLanguageNative          UserTitleLanguage = "NATIVE"
+	UserTitleLanguageRomajiStylised  UserTitleLanguage = "ROMAJI_STYLISED"
+	UserTitleLanguageEnglishStylised UserTitleLanguage = "ENGLISH_STYLISED"
+	UserTitleLanguageNativeStylised  UserTitleLanguage = "NATIVE_STYLISED"
 )
 
 // NotificationType is user notification type.
 type NotificationType string
 
+// Options for NotificationType.
 const (
-	NotificationActivityMessage         NotificationType = "ACTIVITY_MESSAGE"
-	NotificationActivityReply           NotificationType = "ACTIVITY_REPLY"
-	NotificationActivityFollowing       NotificationType = "FOLLOWING"
-	NotificationActivityMention         NotificationType = "ACTIVITY_MENTION"
-	NotificationThreadCommentMention    NotificationType = "THREAD_COMMENT_MENTION"
-	NotificationThreadSubscribed        NotificationType = "THREAD_SUBSCRIBED"
-	NotificationThreadCommentReply      NotificationType = "THREAD_COMMENT_REPLY"
-	NotificationAiring                  NotificationType = "AIRING"
-	NotificationActivityLike            NotificationType = "ACTIVITY_LIKE"
-	NotificationActivityReplyLike       NotificationType = "ACTIVITY_REPLY_LIKE"
-	NotificationThreadLike              NotificationType = "THREAD_LIKE"
-	NotificationThreadCommentLike       NotificationType = "THREAD_COMMENT_LIKE"
-	NotificationActivityReplySubscribed NotificationType = "ACTIVITY_REPLY_SUBSCRIBED"
-	NotificationRelatedMediaAddition    NotificationType = "RELATED_MEDIA_ADDITION"
+	NotificationTypeActivityMessage         NotificationType = "ACTIVITY_MESSAGE"
+	NotificationTypeActivityReply           NotificationType = "ACTIVITY_REPLY"
+	NotificationTypeActivityFollowing       NotificationType = "FOLLOWING"
+	NotificationTypeActivityMention         NotificationType = "ACTIVITY_MENTION"
+	NotificationTypeThreadCommentMention    NotificationType = "THREAD_COMMENT_MENTION"
+	NotificationTypeThreadSubscribed        NotificationType = "THREAD_SUBSCRIBED"
+	NotificationTypeThreadCommentReply      NotificationType = "THREAD_COMMENT_REPLY"
+	NotificationTypeAiring                  NotificationType = "AIRING"
+	NotificationTypeActivityLike            NotificationType = "ACTIVITY_LIKE"
+	NotificationTypeActivityReplyLike       NotificationType = "ACTIVITY_REPLY_LIKE"
+	NotificationTypeThreadLike              NotificationType = "THREAD_LIKE"
+	NotificationTypeThreadCommentLike       NotificationType = "THREAD_COMMENT_LIKE"
+	NotificationTypeActivityReplySubscribed NotificationType = "ACTIVITY_REPLY_SUBSCRIBED"
+	NotificationTypeRelatedMediaAddition    NotificationType = "RELATED_MEDIA_ADDITION"
 )
 
 // UserStaffNameLanguage is default user staff naming language.
 type UserStaffNameLanguage string
 
+// Options for UserStaffNameLanguage
 const (
-	UserStaffLanguageRomajiWestern UserStaffNameLanguage = "ROMAJI_WESTERN"
-	UserStaffLanguageRomaji        UserStaffNameLanguage = "ROMAJI"
-	UserStaffLanguageNative        UserStaffNameLanguage = "NATIVE"
+	UserStaffNameLanguageRomajiWestern UserStaffNameLanguage = "ROMAJI_WESTERN"
+	UserStaffNameLanguageRomaji        UserStaffNameLanguage = "ROMAJI"
+	UserStaffNameLanguageNative        UserStaffNameLanguage = "NATIVE"
 )
 
 // ReviewRating is type of review rating.
 type ReviewRating string
 
+// Options for ReviewRating.
 const (
-	RatingNoVote   ReviewRating = "NO_VOTE"
-	RatingUpVote   ReviewRating = "UP_VOTE"
-	RatingDownVote ReviewRating = "DOWN_VOTE"
+	ReviewRatingNoVote   ReviewRating = "NO_VOTE"
+	ReviewRatingUpVote   ReviewRating = "UP_VOTE"
+	ReviewRatingDownVote ReviewRating = "DOWN_VOTE"
 )
 
 // RecommendationRating is type of recommendation rating.
 type RecommendationRating string
 
+// Options for RecommendationRating.
 const (
-	RatingNoRating RecommendationRating = "NO_RATING"
-	RatingRateUp   RecommendationRating = "RATE_UP"
-	RatingRateDown RecommendationRating = "RATE_DOWN"
+	RecommendationRatingNoRating RecommendationRating = "NO_RATING"
+	RecommendationRatingRateUp   RecommendationRating = "RATE_UP"
+	RecommendationRatingRateDown RecommendationRating = "RATE_DOWN"
 )
 
 // ScoreFormat is scoring format.
 type ScoreFormat string
 
+// Options for ScoreFormat.
 const (
-	ScorePoint100        ScoreFormat = "POINT_100"
-	ScorePoint100Decimal ScoreFormat = "POINT_10_DECIMAL"
-	ScorePoint10         ScoreFormat = "POINT_10"
-	ScorePoint5          ScoreFormat = "POINT_5"
-	ScorePoint3          ScoreFormat = "POINT_3"
+	ScoreFormatPoint100        ScoreFormat = "POINT_100"
+	ScoreFormatPoint100Decimal ScoreFormat = "POINT_10_DECIMAL"
+	ScoreFormatPoint10         ScoreFormat = "POINT_10"
+	ScoreFormatPoint5          ScoreFormat = "POINT_5"
+	ScoreFormatPoint3          ScoreFormat = "POINT_3"
 )
 
 // ModRole is mod role.
 type ModRole string
 
+// Options for ModRole.
 const (
-	RoleAdmin            ModRole = "ADMIN"
-	RoleLeadDeveloper    ModRole = "LEAD_DEVELOPER"
-	RoleDeveloper        ModRole = "DEVELOPER"
-	RoleLeadCommunity    ModRole = "LEAD_COMMUNITY"
-	RoleCommunity        ModRole = "COMMUNITY"
-	RoleDiscordCommunity ModRole = "DISCORD_COMMUNITY"
-	RoleLeadAnimeData    ModRole = "LEAD_ANIME_DATA"
-	RoleAnimeData        ModRole = "ANIME_DATA"
-	RoleLeadMangaData    ModRole = "LEAD_MANGA_DATA"
-	RoleMangaData        ModRole = "MANGA_DATA"
-	RoleLeadSocialMedia  ModRole = "LEAD_SOCIAL_MEDIA"
-	RoleSocialMedia      ModRole = "SOCIAL_MEDIA"
-	RoleRetired          ModRole = "RETIRED"
+	ModRoleAdmin            ModRole = "ADMIN"
+	ModRoleLeadDeveloper    ModRole = "LEAD_DEVELOPER"
+	ModRoleDeveloper        ModRole = "DEVELOPER"
+	ModRoleLeadCommunity    ModRole = "LEAD_COMMUNITY"
+	ModRoleCommunity        ModRole = "COMMUNITY"
+	ModRoleDiscordCommunity ModRole = "DISCORD_COMMUNITY"
+	ModRoleLeadAnimeData    ModRole = "LEAD_ANIME_DATA"
+	ModRoleAnimeData        ModRole = "ANIME_DATA"
+	ModRoleLeadMangaData    ModRole = "LEAD_MANGA_DATA"
+	ModRoleMangaData        ModRole = "MANGA_DATA"
+	ModRoleLeadSocialMedia  ModRole = "LEAD_SOCIAL_MEDIA"
+	ModRoleSocialMedia      ModRole = "SOCIAL_MEDIA"
+	ModRoleRetired          ModRole = "RETIRED"
 )
 
 // CharacterSort is sorting option for character list.
 type CharacterSort string
 
+// Options for CharacterSort.
 const (
 	CharacterSortID             CharacterSort = "ID"
 	CharacterSortIDDesc         CharacterSort = "ID_DESC"
@@ -214,6 +231,7 @@ const (
 // StaffSort is sorting option for staff list.
 type StaffSort string
 
+// Options for StaffSort.
 const (
 	StaffSortID             StaffSort = "ID"
 	StaffSortIDDesc         StaffSort = "ID_DESC"
@@ -230,6 +248,7 @@ const (
 // MediaSort is sorting option for anime & manga list.
 type MediaSort string
 
+// Options for MediaSort.
 const (
 	MediaSortID               MediaSort = "ID"
 	MediaSortIDDesc           MediaSort = "ID_DESC"
@@ -273,6 +292,7 @@ const (
 // StaffLanguage is staff language.
 type StaffLanguage string
 
+// Options for StaffLanguage.
 const (
 	StaffLanguageJapanese   StaffLanguage = "JAPANESE"
 	StaffLanguageEnglish    StaffLanguage = "ENGLISH"
@@ -289,6 +309,7 @@ const (
 // StudioSort is sorting option for studio list.
 type StudioSort string
 
+// Options for StudioSort.
 const (
 	StudioSortID             StudioSort = "ID"
 	StudioSortIDDesc         StudioSort = "ID_DESC"
@@ -302,6 +323,7 @@ const (
 // MediaTrendSort is sorting option for media trend list.
 type MediaTrendSort string
 
+// Options for MediaTrendSort.
 const (
 	MediaTrendSortID             MediaTrendSort = "ID"
 	MediaTrendSortIDDesc         MediaTrendSort = "ID_DESC"
@@ -322,6 +344,7 @@ const (
 // ReviewSort is sorting option for review list.
 type ReviewSort string
 
+// Options for ReviewSort.
 const (
 	ReviewSortID            ReviewSort = "ID"
 	ReviewSortIDDesc        ReviewSort = "ID_DESC"
@@ -338,6 +361,7 @@ const (
 // RecommendationSort is sorting option for recommendation list.
 type RecommendationSort string
 
+// Options for RecommendationSort.
 const (
 	RecommendationSortID         RecommendationSort = "ID"
 	RecommendationSortIDDesc     RecommendationSort = "ID_DESC"
@@ -348,6 +372,7 @@ const (
 // UserStatisticsSort is sorting option for user statistics list.
 type UserStatisticsSort string
 
+// Options for UserStatisticsSort.
 const (
 	UserStatisticsSortID            UserStatisticsSort = "ID"
 	UserStatisticsSortIDDesc        UserStatisticsSort = "ID_DESC"

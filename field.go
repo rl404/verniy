@@ -6,6 +6,7 @@ type QueryParam map[string]interface{}
 // MediaField is fields for media.
 type MediaField string
 
+// Fields for MediaField.
 const (
 	MediaFieldID                      MediaField = "id"
 	MediaFieldIDMAL                   MediaField = "idMal"
@@ -50,6 +51,7 @@ const (
 // MediaTitleField is fields for media title.
 type MediaTitleField string
 
+// Fields for MediaTitleField.
 const (
 	MediaTitleFieldRomaji        MediaTitleField = "romaji"
 	MediaTitleFieldEnglish       MediaTitleField = "english"
@@ -69,6 +71,7 @@ func MediaFieldTitle(field MediaTitleField, fields ...MediaTitleField) MediaFiel
 // MediaTrailerField is fields for media trailer.
 type MediaTrailerField string
 
+// Fields for MediaTrailerField.
 const (
 	MediaTrailerFieldID        MediaTrailerField = "id"
 	MediaTrailerFieldSite      MediaTrailerField = "site"
@@ -87,6 +90,7 @@ func MediaFieldTrailer(field MediaTrailerField, fields ...MediaTrailerField) Med
 // MediaCoverImageField is fields for media cover image.
 type MediaCoverImageField string
 
+// Fields for MediaCoverImageField.
 const (
 	MediaCoverImageFieldExtraLarge MediaCoverImageField = "extraLarge"
 	MediaCoverImageFieldLarge      MediaCoverImageField = "large"
@@ -106,6 +110,7 @@ func MediaFieldCoverImage(field MediaCoverImageField, fields ...MediaCoverImageF
 // MediaTagField is fields for media tag.
 type MediaTagField string
 
+// Fields for MediaTagField.
 const (
 	MediaTagFieldID               MediaTagField = "id"
 	MediaTagFieldName             MediaTagField = "name"
@@ -141,6 +146,7 @@ func MediaFieldRelations(field MediaConnectionField, fields ...MediaConnectionFi
 // MediaEdgeField is fields for media edge.
 type MediaEdgeField string
 
+// Fields for MediaEdgeField.
 const (
 	MediaEdgeFieldID             MediaEdgeField = "id"
 	MediaEdgeFieldRelationType   MediaEdgeField = "relationType"
@@ -175,6 +181,7 @@ func MediaEdgeFieldNode(field MediaField, fields ...MediaField) MediaEdgeField {
 // CharacterField is fields for character.
 type CharacterField string
 
+// Fields for CharacterField.
 const (
 	CharacterFieldID                 CharacterField = "id"
 	CharacterFieldDescription        CharacterField = "description"
@@ -201,6 +208,7 @@ func MediaEdgeFieldCharacters(field CharacterField, fields ...CharacterField) Me
 // CharacterNameField is fields for character name.
 type CharacterNameField string
 
+// Fields for CharacterNameField.
 const (
 	CharacterNameFieldFirst              CharacterNameField = "first"
 	CharacterNameFieldMiddle             CharacterNameField = "middle"
@@ -224,6 +232,7 @@ func CharacterFieldName(field CharacterNameField, fields ...CharacterNameField) 
 // CharacterImageField is fields for character image.
 type CharacterImageField string
 
+// Fields for CharacterImageField.
 const (
 	CharacterImageFieldLarge  CharacterImageField = "large"
 	CharacterImageFieldMedium CharacterImageField = "medium"
@@ -256,6 +265,7 @@ func CharacterFieldMedia(param CharacterParamMedia, field MediaConnectionField, 
 // StaffField is fields for staff.
 type StaffField string
 
+// Fields for StaffField.
 const (
 	StaffFieldID                 StaffField = "id"
 	StaffFieldLanguage           StaffField = "languageV2"
@@ -279,6 +289,7 @@ const (
 // StaffNameField is fields for staff name.
 type StaffNameField string
 
+// Fields for StaffNameField.
 const (
 	StaffNameFieldFirst         StaffNameField = "first"
 	StaffNameFieldMiddle        StaffNameField = "middle"
@@ -301,6 +312,7 @@ func StaffFieldName(field StaffNameField, fields ...StaffNameField) StaffField {
 // StaffImageField is fields for staff image.
 type StaffImageField string
 
+// Fields for StaffImageField.
 const (
 	StaffImageFieldLarge  StaffImageField = "large"
 	StaffImageFieldMedium StaffImageField = "medium"
@@ -381,6 +393,7 @@ func StaffFieldStaff(field StaffField, fields ...StaffField) StaffField {
 // UserField is fields for user.
 type UserField string
 
+// Fields for UserField.
 const (
 	UserFieldID                      UserField = "id"
 	UserFieldName                    UserField = "name"
@@ -403,6 +416,7 @@ const (
 // UserAvatarField is fields for user avatar.
 type UserAvatarField string
 
+// Fields for UserAvatarField.
 const (
 	UserAvatarFieldLarge  UserAvatarField = "large"
 	UserAvatarFieldMedium UserAvatarField = "medium"
@@ -420,6 +434,7 @@ func UserFieldAvatar(field UserAvatarField, fields ...UserAvatarField) UserField
 // UserPreviousNameField is fields for user previous name.
 type UserPreviousNameField string
 
+// Fields for UserPreviousNameField.
 const (
 	UserPreviousNameFieldName      UserPreviousNameField = "name"
 	UserPreviousNameFieldCreatedAt UserPreviousNameField = "createdAt"
@@ -441,6 +456,7 @@ type UserStatisticTypesField string
 // UserStatisticsField is fields for user statistics.
 type UserStatisticsField string
 
+// Fields for UserStatisticsField.
 const (
 	UserStatisticsFieldCount             UserStatisticsField = "count"
 	UserStatisticsFieldMeanScore         UserStatisticsField = "meanScore"
@@ -454,6 +470,7 @@ const (
 // UserFormatStatisticField is fields for user format statistic.
 type UserFormatStatisticField string
 
+// Fields for UserFormatStatisticField.
 const (
 	UserFormatStatisticFieldCount          UserFormatStatisticField = "count"
 	UserFormatStatisticFieldMeanScore      UserFormatStatisticField = "meanScore"
@@ -478,6 +495,7 @@ func UserStatisticsFieldFormats(param UserStatisticsParamFormats, field UserForm
 // UserStatusStatisticField is fields for user status statistic.
 type UserStatusStatisticField string
 
+// Fields for UserStatusStatisticField.
 const (
 	UserStatusStatisticFieldCount          UserStatusStatisticField = "count"
 	UserStatusStatisticFieldMeanScore      UserStatusStatisticField = "meanScore"
@@ -502,6 +520,7 @@ func UserStatisticsFieldStatuses(param UserStatisticsParamStatuses, field UserSt
 // UserScoreStatisticField is fields for user score statistic.
 type UserScoreStatisticField string
 
+// Fields for UserScoreStatisticField.
 const (
 	UserScoreStatisticFieldCount          UserScoreStatisticField = "count"
 	UserScoreStatisticFieldMeanScore      UserScoreStatisticField = "meanScore"
@@ -514,6 +533,7 @@ const (
 // UserLengthStatisticField is fields for user length statistic.
 type UserLengthStatisticField string
 
+// Fields for UserLengthStatisticField.
 const (
 	UserLengthStatisticFieldCount          UserLengthStatisticField = "count"
 	UserLengthStatisticFieldMeanScore      UserLengthStatisticField = "meanScore"
@@ -538,6 +558,7 @@ func UserStatisticsFieldLength(param UserStatisticsParamLengths, field UserLengt
 // UserReleaseYearStatisticField is fields for user release year statistic.
 type UserReleaseYearStatisticField string
 
+// Fields for UserReleaseYearStatisticField.
 const (
 	UserReleaseYearStatisticFieldCount          UserReleaseYearStatisticField = "count"
 	UserReleaseYearStatisticFieldMeanScore      UserReleaseYearStatisticField = "meanScore"
@@ -562,6 +583,7 @@ func UserStatisticsFieldReleaseYears(param UserStatisticsParamReleaseYears, fiel
 // UserStartYearStatisticField is fields for user start year.
 type UserStartYearStatisticField string
 
+// Fields for UserStartYearStatisticField.
 const (
 	UserStartYearStatisticFieldCount          UserStartYearStatisticField = "count"
 	UserStartYearStatisticFieldMeanScore      UserStartYearStatisticField = "meanScore"
@@ -586,6 +608,7 @@ func UserStatisticsFieldStartYears(param UserStatisticsParamStartYears, field Us
 // UserGenreStatisticField is fields for user genre statistic.
 type UserGenreStatisticField string
 
+// Fields for UserGenreStatisticField.
 const (
 	UserGenreStatisticFieldCount          UserGenreStatisticField = "count"
 	UserGenreStatisticFieldMeanScore      UserGenreStatisticField = "meanScore"
@@ -610,6 +633,7 @@ func UserStatisticsFieldGenre(param UserStatisticsParamGenres, field UserGenreSt
 // UserTagStatisticField is fields for user tag statistic.
 type UserTagStatisticField string
 
+// Fields for UserTagStatisticField.
 const (
 	UserTagStatisticFieldCount          UserTagStatisticField = "count"
 	UserTagStatisticFieldMeanScore      UserTagStatisticField = "meanScore"
@@ -634,6 +658,7 @@ func UserStatisticsFieldTags(param UserStatisticsParamTags, field UserTagStatist
 // UserCountryStatisticField is fields for user country statistic.
 type UserCountryStatisticField string
 
+// Fields for UserCountryStatisticField.
 const (
 	UserCountryStatisticFieldCount          UserCountryStatisticField = "count"
 	UserCountryStatisticFieldMeanScore      UserCountryStatisticField = "meanScore"
@@ -658,6 +683,7 @@ func UserStatisticsFieldCountries(param UserStatisticsParamCountries, field User
 // UserVoiceActorStatisticField is fields for user voice actor statistic.
 type UserVoiceActorStatisticField string
 
+// Fields for UserVoiceActorStatisticField.
 const (
 	UserVoiceActorStatisticFieldCount          UserVoiceActorStatisticField = "count"
 	UserVoiceActorStatisticFieldMeanScore      UserVoiceActorStatisticField = "meanScore"
@@ -682,6 +708,7 @@ func UserStatisticsFieldVoiceActors(param UserStatisticsParamVoiceActors, field 
 // UserStaffStatisticField is fields for user staff statistic.
 type UserStaffStatisticField string
 
+// Fields for UserStaffStatisticField.
 const (
 	UserStaffStatisticFieldCount          UserStaffStatisticField = "count"
 	UserStaffStatisticFieldMeanScore      UserStaffStatisticField = "meanScore"
@@ -714,6 +741,7 @@ func UserStatisticsFieldStaff(param UserStatisticsParamStaff, field UserStaffSta
 // UserStudioStatisticField is fields for user studio statistic.
 type UserStudioStatisticField string
 
+// Fields for UserStudioStatisticField.
 const (
 	UserStudioStatisticFieldCount          UserStudioStatisticField = "count"
 	UserStudioStatisticFieldMeanScore      UserStudioStatisticField = "meanScore"
@@ -868,6 +896,7 @@ func UserFieldFavourites(param UserParamFavourites, field FavouritesField, field
 // UserOptionsField is fields for user options.
 type UserOptionsField string
 
+// FIelds for UserOptionsField.
 const (
 	UserOptionsFieldTitleLanguage       UserOptionsField = "titleLanguage"
 	UserOptionsFieldDisplayAdultContent UserOptionsField = "displayAdultContent"
@@ -890,6 +919,7 @@ func UserFieldOptions(field UserOptionsField, fields ...UserOptionsField) UserFi
 // MediaListOptionsField is fields for media list options.
 type MediaListOptionsField string
 
+// Fields for MediaListOptionsField.
 const (
 	MediaListOptionsFieldScoreFormat MediaListOptionsField = "scoreFormat"
 	MediaListOptionsFieldRowOrder    MediaListOptionsField = "rowOrder"
@@ -898,6 +928,7 @@ const (
 // MediaListTypeOptionsField is fields for media list type options.
 type MediaListTypeOptionsField string
 
+// Fields for MediaListTypeOptionsField.
 const (
 	MediaListTypeOptionsFieldSectionOrder                  MediaListTypeOptionsField = "sectionOrder"
 	MediaListTypeOptionsFieldSplitCompletedSectionByFormat MediaListTypeOptionsField = "splitCompletedSectionByFormat"
@@ -936,6 +967,7 @@ func UserFieldMediaListOptions(field MediaListOptionsField, fields ...MediaListO
 // NotificationOptionField is fields for notification option.
 type NotificationOptionField string
 
+// Fields for NotificationOptionField.
 const (
 	NotificationOptionFieldType    NotificationOptionField = "type"
 	NotificationOptionFieldEnabled NotificationOptionField = "enabled"
@@ -962,6 +994,7 @@ func StaffFieldSubmitter(field UserField, fields ...UserField) StaffField {
 // StaffRoleTypeField is fields for staff role type.
 type StaffRoleTypeField string
 
+// Fields for StaffRoleTypeField.
 const (
 	StaffRoleTypeFieldRoleNotes StaffRoleTypeField = "roleNotes"
 	StaffRoleTypeFieldDubGroup  StaffRoleTypeField = "dubGroup"
@@ -1000,6 +1033,7 @@ func MediaConnectionFieldNodes(field MediaField, fields ...MediaField) MediaConn
 // PageInfoField is fields for page info.
 type PageInfoField string
 
+// Fields for PageInfoField.
 const (
 	PageInfoFieldTotal       PageInfoField = "total"
 	PageInfoFieldPerPage     PageInfoField = "perPage"
@@ -1037,6 +1071,7 @@ func MediaFieldCharacters(param MediaParamCharacters, field CharacterConnectionF
 // CharacterEdgeField is fields for character edge.
 type CharacterEdgeField string
 
+// Fields for CharacterEdgeField.
 const (
 	CharacterEdgeFieldID             CharacterEdgeField = "id"
 	CharacterEdgeFieldRole           CharacterEdgeField = "role"
@@ -1132,6 +1167,7 @@ func MediaFieldStaff(param MediaParamStaff, field StaffConnectionField, fields .
 // StaffEdgeField is fields for staff edge query.
 type StaffEdgeField string
 
+// Fields for StaffEdgeField.
 const (
 	StaffEdgeFieldID             StaffEdgeField = "id"
 	StaffEdgeFieldRole           StaffEdgeField = "role"
@@ -1192,6 +1228,8 @@ func MediaFieldStudios(param MediaParamStudios, field StudioConnectionField, fie
 // StudioEdgeField is fields for studio edge.
 type StudioEdgeField string
 
+// Fields for StudioEdgeField.
+// Fields for StudioEdgeField.
 const (
 	StudioEdgeFieldID             StudioEdgeField = "id"
 	StudioEdgeFieldIsMain         StudioEdgeField = "isMain"
@@ -1219,6 +1257,7 @@ func StudioEdgeFieldNode(field StudioField, fields ...StudioField) StudioEdgeFie
 // StudioField is fields for studio.
 type StudioField string
 
+// Fields for StudioField.
 const (
 	StudioFieldID                StudioField = "id"
 	StudioFieldName              StudioField = "name"
@@ -1264,6 +1303,7 @@ func StudioConnectionFieldPageInfo(field PageInfoField, fields ...PageInfoField)
 // AiringScheduleField is fields for airing schedule.
 type AiringScheduleField string
 
+// Fields for AiringScheduleField.
 const (
 	AiringScheduleFieldID              AiringScheduleField = "id"
 	AiringScheduleFieldAiringAt        AiringScheduleField = "airingAt"
@@ -1309,6 +1349,7 @@ type AiringScheduleConnectionField string
 // AiringScheduleEdgeField is fields for airing schedule edge.
 type AiringScheduleEdgeField string
 
+// Fields for AiringScheduleEdgeField.
 const (
 	AiringScheduleEdgeFieldID AiringScheduleEdgeField = "id"
 )
@@ -1390,6 +1431,7 @@ func MediaTrendEdgeFieldNode(field MediaTrendField, fields ...MediaTrendField) M
 // MediaTrendField is fields for media trend.
 type MediaTrendField string
 
+// Fields for MediaTrendField.
 const (
 	MediaTrendFieldMediaID      MediaTrendField = "mediaID"
 	MediaTrendFieldDate         MediaTrendField = "date"
@@ -1431,6 +1473,7 @@ func MediaTrendConnectionFieldPageInfo(field PageInfoField, fields ...PageInfoFi
 // MediaExternalLinkField is fields for media external link.
 type MediaExternalLinkField string
 
+// Fields for MediaExternalLinkField.
 const (
 	MediaExternalLinkFieldID   MediaExternalLinkField = "id"
 	MediaExternalLinkFieldURL  MediaExternalLinkField = "url"
@@ -1449,6 +1492,7 @@ func MediaFieldExternalLinks(field MediaExternalLinkField, fields ...MediaExtern
 // MediaStreamingEpisodeField is fields media streaming episode.
 type MediaStreamingEpisodeField string
 
+// Fields for MediaStreamingEpisodeField.
 const (
 	MediaStreamingEpisodeFieldTitle     MediaStreamingEpisodeField = "title"
 	MediaStreamingEpisodeFieldThumbnail MediaStreamingEpisodeField = "thumbnail"
@@ -1468,6 +1512,7 @@ func MediaFieldStreamingEpisodes(field MediaStreamingEpisodeField, fields ...Med
 // MediaRankField is fields for media rank.
 type MediaRankField string
 
+// Fields for MediaRankField.
 const (
 	MediaRankFieldID      MediaRankField = "id"
 	MediaRankFieldRank    MediaRankField = "rank"
@@ -1491,6 +1536,7 @@ func MediaFieldRankings(field MediaRankField, fields ...MediaRankField) MediaFie
 // MediaListField is fields for media list.
 type MediaListField string
 
+// Fields for MediaListField.
 const (
 	MediaListFieldID                    MediaListField = "id"
 	MediaListFieldUserID                MediaListField = "userId"
@@ -1581,6 +1627,7 @@ func ReviewEdgeFieldNode(field ReviewField, fields ...ReviewField) ReviewEdgeFie
 // ReviewField is fields for review.
 type ReviewField string
 
+// Fields for ReviewField.
 const (
 	ReviewFieldID           ReviewField = "id"
 	ReviewFieldUserID       ReviewField = "userId"
@@ -1675,6 +1722,7 @@ func RecommendationEdgeFieldNode(field RecommendationField, fields ...Recommenda
 // RecommendationField is fields for recommendation.
 type RecommendationField string
 
+// Fields for RecommendationField.
 const (
 	RecommendationFieldID         RecommendationField = "id"
 	RecommendationFieldRating     RecommendationField = "rating"
@@ -1729,6 +1777,7 @@ func RecommendationConnectionFieldPageInfo(field PageInfoField, fields ...PageIn
 // MediaStatsField is fields for media stats.
 type MediaStatsField string
 
+// Fields for MediaStatsField.
 const (
 	MediaStatsFieldScoreDistribution  MediaStatsField = "scoreDistribution{score amount}"
 	MediaStatsFieldStatusDistribution MediaStatsField = "statusDistribution{status amount}"
