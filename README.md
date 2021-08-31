@@ -17,7 +17,7 @@ This library is built using [Anilist official docs](https://github.com/AniList/A
 ## Features
 
 - Get anime data (details, characters, staff, stats)
-- Get manga data (details, characaters, staff, stats)
+- Get manga data (details, characters, staff, stats)
 - Get character data (details, anime roles, manga roles)
 - Get voice actor/mangaka/staff data (details, character roles, anime roles, manga roles)
 - Get studio list and their produced anime
@@ -26,7 +26,7 @@ This library is built using [Anilist official docs](https://github.com/AniList/A
 - Search anime
 - Search manga
 - Search character
-- Search voice actor/manga/staff
+- Search voice actor/mangaka/staff
 - Built-in request rate limiting
 
 ## Installation
