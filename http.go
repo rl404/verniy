@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -46,7 +45,7 @@ func (c *Client) post(query string, v map[string]interface{}, model interface{})
 	if err != nil {
 		return err
 	}
-	fmt.Println(string(d))
+
 	body, code, err := c.MakeRequest(d)
 	if err != nil {
 		return err
