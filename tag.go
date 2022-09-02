@@ -1,5 +1,7 @@
 package verniy
 
+import "context"
+
 type tagResponse struct {
 	Data struct {
 		Tags []MediaTag `json:"mediaTagCollection"`
@@ -16,6 +18,11 @@ func (c *Client) tagQuery(fields ...MediaTagField) string {
 
 // GetTags to get all tag list.
 func (c *Client) GetTags(fields ...MediaTagField) ([]MediaTag, error) {
+	return c.GetTagsWithContext(context.Background(), fields...)
+}
+
+// GetTagsWithContext to get all tag list with context.
+func (c *Client) GetTagsWithContext(ctx context.Context, fields ...MediaTagField) ([]MediaTag, error) {
 	if len(fields) == 0 {
 		fields = []MediaTagField{
 			MediaTagFieldName,
@@ -28,7 +35,7 @@ func (c *Client) GetTags(fields ...MediaTagField) ([]MediaTag, error) {
 	query := FieldObject("query", nil, c.tagQuery(fields...))
 
 	var d tagResponse
-	err := c.post(query, nil, &d)
+	err := c.post(ctx, query, nil, &d)
 	if err != nil {
 		return nil, err
 	}

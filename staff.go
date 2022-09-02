@@ -1,5 +1,7 @@
 package verniy
 
+import "context"
+
 type staffResponse struct {
 	Data struct {
 		Staff Staff `json:"staff"`
@@ -16,6 +18,11 @@ func (c *Client) staffQuery(params QueryParam, fields ...StaffField) string {
 
 // GetStaff to get staff & voice actor data.
 func (c *Client) GetStaff(id int, fields ...StaffField) (*Staff, error) {
+	return c.GetStaffWithContext(context.Background(), id, fields...)
+}
+
+// GetStaffWithContext to get staff & voice actor data with context.
+func (c *Client) GetStaffWithContext(ctx context.Context, id int, fields ...StaffField) (*Staff, error) {
 	if len(fields) == 0 {
 		fields = []StaffField{
 			StaffFieldID,
@@ -43,7 +50,7 @@ func (c *Client) GetStaff(id int, fields ...StaffField) (*Staff, error) {
 	}, fields...))
 
 	var d staffResponse
-	err := c.post(query, queryVariable{
+	err := c.post(ctx, query, queryVariable{
 		"id": id,
 	}, &d)
 	if err != nil {
@@ -55,7 +62,12 @@ func (c *Client) GetStaff(id int, fields ...StaffField) (*Staff, error) {
 
 // GetStaffCharacters to get list of character the staff play.
 func (c *Client) GetStaffCharacters(id int, page int, perPage int) (*Staff, error) {
-	return c.GetStaff(id, StaffFieldCharacterMedia(StaffParamCharacterMedia{
+	return c.GetStaffCharactersWithContext(context.Background(), id, page, perPage)
+}
+
+// GetStaffCharactersWithContext to get list of character the staff play with context.
+func (c *Client) GetStaffCharactersWithContext(ctx context.Context, id int, page int, perPage int) (*Staff, error) {
+	return c.GetStaffWithContext(ctx, id, StaffFieldCharacterMedia(StaffParamCharacterMedia{
 		Page:    page,
 		PerPage: perPage,
 		Sort:    []MediaSort{MediaSortStartDateDesc},
@@ -82,8 +94,8 @@ func (c *Client) GetStaffCharacters(id int, page int, perPage int) (*Staff, erro
 				CharacterFieldImage(CharacterImageFieldMedium)))))
 }
 
-func (c *Client) getStaffMedia(id int, mediaType MediaType, page int, perPage int) (*Staff, error) {
-	return c.GetStaff(id, StaffFieldStaffMedia(StaffParamStaffMedia{
+func (c *Client) getStaffMedia(ctx context.Context, id int, mediaType MediaType, page int, perPage int) (*Staff, error) {
+	return c.GetStaffWithContext(ctx, id, StaffFieldStaffMedia(StaffParamStaffMedia{
 		Page:    page,
 		PerPage: perPage,
 		Type:    mediaType,
@@ -109,10 +121,20 @@ func (c *Client) getStaffMedia(id int, mediaType MediaType, page int, perPage in
 
 // GetStaffAnime to get staff anime list.
 func (c *Client) GetStaffAnime(id int, page int, perPage int) (*Staff, error) {
-	return c.getStaffMedia(id, MediaTypeAnime, page, perPage)
+	return c.GetStaffAnimeWithContext(context.Background(), id, page, perPage)
+}
+
+// GetStaffAnimeWithContext to get staff anime list with context.
+func (c *Client) GetStaffAnimeWithContext(ctx context.Context, id int, page int, perPage int) (*Staff, error) {
+	return c.getStaffMedia(ctx, id, MediaTypeAnime, page, perPage)
 }
 
 // GetStaffManga to get staff manga list.
 func (c *Client) GetStaffManga(id int, page int, perPage int) (*Staff, error) {
-	return c.getStaffMedia(id, MediaTypeManga, page, perPage)
+	return c.GetStaffMangaWithContext(context.Background(), id, page, perPage)
+}
+
+// GetStaffMangaWithContext to get staff manga list with context.
+func (c *Client) GetStaffMangaWithContext(ctx context.Context, id int, page int, perPage int) (*Staff, error) {
+	return c.getStaffMedia(ctx, id, MediaTypeManga, page, perPage)
 }
