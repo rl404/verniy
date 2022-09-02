@@ -1,5 +1,7 @@
 package verniy
 
+import "context"
+
 type mediaResponse struct {
 	Data struct {
 		Media Media `json:"media"`
@@ -14,7 +16,7 @@ func (c *Client) mediaQuery(params QueryParam, fields ...MediaField) string {
 	return FieldObject("Media", params, p...)
 }
 
-func (c *Client) getMedia(id int, mediaType MediaType, fields ...MediaField) (*Media, error) {
+func (c *Client) getMedia(ctx context.Context, id int, mediaType MediaType, fields ...MediaField) (*Media, error) {
 	query := FieldObject("query", QueryParam{
 		"$id":   "Int",
 		"$type": "MediaType",
@@ -24,7 +26,7 @@ func (c *Client) getMedia(id int, mediaType MediaType, fields ...MediaField) (*M
 	}, fields...))
 
 	var d mediaResponse
-	err := c.post(query, queryVariable{
+	err := c.post(ctx, query, queryVariable{
 		"id":   id,
 		"type": mediaType,
 	}, &d)
@@ -37,6 +39,11 @@ func (c *Client) getMedia(id int, mediaType MediaType, fields ...MediaField) (*M
 
 // GetAnime to get anime data.
 func (c *Client) GetAnime(id int, fields ...MediaField) (*Media, error) {
+	return c.GetAnimeWithContext(context.Background(), id, fields...)
+}
+
+// GetAnimeWithContext to get anime data with context.
+func (c *Client) GetAnimeWithContext(ctx context.Context, id int, fields ...MediaField) (*Media, error) {
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldID,
@@ -118,11 +125,16 @@ func (c *Client) GetAnime(id int, fields ...MediaField) (*Media, error) {
 						StudioFieldIsAnimationStudio))),
 		}
 	}
-	return c.getMedia(id, MediaTypeAnime, fields...)
+	return c.getMedia(ctx, id, MediaTypeAnime, fields...)
 }
 
 // GetAnimeCharacters to get list of characters in anime.
 func (c *Client) GetAnimeCharacters(id int, page int, perPage int, fields ...MediaField) (*Media, error) {
+	return c.GetAnimeCharactersWithContext(context.Background(), id, page, perPage, fields...)
+}
+
+// GetAnimeCharactersWithContext to get list of characters in anime with context.
+func (c *Client) GetAnimeCharactersWithContext(ctx context.Context, id int, page int, perPage int, fields ...MediaField) (*Media, error) {
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldCharacters(
@@ -151,11 +163,16 @@ func (c *Client) GetAnimeCharacters(id int, page int, perPage int, fields ...Med
 						StaffFieldLanguage))),
 		}
 	}
-	return c.getMedia(id, MediaTypeAnime, fields...)
+	return c.getMedia(ctx, id, MediaTypeAnime, fields...)
 }
 
 // GetAnimeStaff to get list of staff in anime.
 func (c *Client) GetAnimeStaff(id int, page int, perPage int, fields ...MediaField) (*Media, error) {
+	return c.GetAnimeStaffWithContext(context.Background(), id, page, perPage, fields...)
+}
+
+// GetAnimeStaffWithContext to get list of staff in anime with context.
+func (c *Client) GetAnimeStaffWithContext(ctx context.Context, id int, page int, perPage int, fields ...MediaField) (*Media, error) {
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldStaff(
@@ -172,11 +189,16 @@ func (c *Client) GetAnimeStaff(id int, page int, perPage int, fields ...MediaFie
 						StaffFieldImage(StaffImageFieldMedium)))),
 		}
 	}
-	return c.getMedia(id, MediaTypeAnime, fields...)
+	return c.getMedia(ctx, id, MediaTypeAnime, fields...)
 }
 
 // GetAnimeStats to get anime stats.
 func (c *Client) GetAnimeStats(id int, fields ...MediaField) (*Media, error) {
+	return c.GetAnimeStatsWithContext(context.Background(), id, fields...)
+}
+
+// GetAnimeStatsWithContext to get anime stats with context.
+func (c *Client) GetAnimeStatsWithContext(ctx context.Context, id int, fields ...MediaField) (*Media, error) {
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldStats(
@@ -184,11 +206,16 @@ func (c *Client) GetAnimeStats(id int, fields ...MediaField) (*Media, error) {
 				MediaStatsFieldStatusDistribution),
 		}
 	}
-	return c.getMedia(id, MediaTypeAnime, fields...)
+	return c.getMedia(ctx, id, MediaTypeAnime, fields...)
 }
 
 // GetManga to get manga data.
 func (c *Client) GetManga(id int, fields ...MediaField) (*Media, error) {
+	return c.GetMangaWithContext(context.Background(), id, fields...)
+}
+
+// GetMangaWithContext to get manga data with context.
+func (c *Client) GetMangaWithContext(ctx context.Context, id int, fields ...MediaField) (*Media, error) {
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldID,
@@ -260,11 +287,16 @@ func (c *Client) GetManga(id int, fields ...MediaField) (*Media, error) {
 			MediaFieldVolumes,
 		}
 	}
-	return c.getMedia(id, MediaTypeManga, fields...)
+	return c.getMedia(ctx, id, MediaTypeManga, fields...)
 }
 
 // GetMangaCharacters to get list of characters in manga.
 func (c *Client) GetMangaCharacters(id int, page int, perPage int, fields ...MediaField) (*Media, error) {
+	return c.GetMangaCharactersWithContext(context.Background(), id, page, perPage, fields...)
+}
+
+// GetMangaCharactersWithContext to get list of characters in manga with context.
+func (c *Client) GetMangaCharactersWithContext(ctx context.Context, id int, page int, perPage int, fields ...MediaField) (*Media, error) {
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldCharacters(
@@ -287,11 +319,16 @@ func (c *Client) GetMangaCharacters(id int, page int, perPage int, fields ...Med
 						CharacterFieldImage(CharacterImageFieldMedium)))),
 		}
 	}
-	return c.getMedia(id, MediaTypeManga, fields...)
+	return c.getMedia(ctx, id, MediaTypeManga, fields...)
 }
 
 // GetMangaStaff to get list of staff in manga.
 func (c *Client) GetMangaStaff(id int, page int, perPage int, fields ...MediaField) (*Media, error) {
+	return c.GetMangaStaffWithContext(context.Background(), id, page, perPage, fields...)
+}
+
+// GetMangaStaffWithContext to get list of staff in manga with context.
+func (c *Client) GetMangaStaffWithContext(ctx context.Context, id int, page int, perPage int, fields ...MediaField) (*Media, error) {
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldStaff(
@@ -308,11 +345,16 @@ func (c *Client) GetMangaStaff(id int, page int, perPage int, fields ...MediaFie
 						StaffFieldImage(StaffImageFieldMedium)))),
 		}
 	}
-	return c.getMedia(id, MediaTypeManga, fields...)
+	return c.getMedia(ctx, id, MediaTypeManga, fields...)
 }
 
 // GetMangaStats to get manga stats.
 func (c *Client) GetMangaStats(id int, fields ...MediaField) (*Media, error) {
+	return c.GetMangaStatsWithContext(context.Background(), id, fields...)
+}
+
+// GetMangaStatsWithContext to get manga stats with context.
+func (c *Client) GetMangaStatsWithContext(ctx context.Context, id int, fields ...MediaField) (*Media, error) {
 	if len(fields) == 0 {
 		fields = []MediaField{
 			MediaFieldStats(
@@ -320,5 +362,5 @@ func (c *Client) GetMangaStats(id int, fields ...MediaField) (*Media, error) {
 				MediaStatsFieldStatusDistribution),
 		}
 	}
-	return c.getMedia(id, MediaTypeManga, fields...)
+	return c.getMedia(ctx, id, MediaTypeManga, fields...)
 }

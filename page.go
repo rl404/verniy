@@ -1,5 +1,7 @@
 package verniy
 
+import "context"
+
 type pageResponse struct {
 	Data struct {
 		Page Page `json:"Page"`
@@ -23,7 +25,7 @@ func (c *Client) pageQuery(params QueryParam, fields ...PageField) string {
 	return FieldObject("Page", params, p...)
 }
 
-func (c *Client) page(page int, perPage int, fields ...PageField) (*Page, error) {
+func (c *Client) page(ctx context.Context, page int, perPage int, fields ...PageField) (*Page, error) {
 	fields = append(fields, PageFieldPageInfo(
 		PageInfoFieldTotal,
 		PageInfoFieldPerPage,
@@ -41,7 +43,7 @@ func (c *Client) page(page int, perPage int, fields ...PageField) (*Page, error)
 	}, fields...))
 
 	var d pageResponse
-	err := c.post(query, queryVariable{
+	err := c.post(ctx, query, queryVariable{
 		"page":    page,
 		"perPage": perPage,
 	}, &d)

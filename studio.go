@@ -1,5 +1,7 @@
 package verniy
 
+import "context"
+
 type studioResponse struct {
 	Data struct {
 		Studio Studio `json:"studio"`
@@ -16,6 +18,11 @@ func (c *Client) studioQuery(params QueryParam, fields ...StudioField) string {
 
 // GetStudio to get anime list produced by the studio.
 func (c *Client) GetStudio(id int, page int, perPage int, fields ...StudioField) (*Studio, error) {
+	return c.GetStudioWithContext(context.Background(), id, page, perPage, fields...)
+}
+
+// GetStudioWithContext to get anime list produced by the studio with context.
+func (c *Client) GetStudioWithContext(ctx context.Context, id int, page int, perPage int, fields ...StudioField) (*Studio, error) {
 	if len(fields) == 0 {
 		fields = []StudioField{
 			StudioFieldID,
@@ -64,7 +71,7 @@ func (c *Client) GetStudio(id int, page int, perPage int, fields ...StudioField)
 	}, fields...))
 
 	var d studioResponse
-	err := c.post(query, QueryParam{
+	err := c.post(ctx, query, QueryParam{
 		"id": id,
 	}, &d)
 	if err != nil {
@@ -76,6 +83,11 @@ func (c *Client) GetStudio(id int, page int, perPage int, fields ...StudioField)
 
 // GetStudios to get list of studios.
 func (c *Client) GetStudios(page int, perPage int, fields ...StudioField) (*Page, error) {
+	return c.GetStudiosWithContext(context.Background(), page, perPage, fields...)
+}
+
+// GetStudiosWithContext to get list of studios with context.
+func (c *Client) GetStudiosWithContext(ctx context.Context, page int, perPage int, fields ...StudioField) (*Page, error) {
 	if len(fields) == 0 {
 		fields = []StudioField{
 			StudioFieldID,
@@ -87,5 +99,5 @@ func (c *Client) GetStudios(page int, perPage int, fields ...StudioField) (*Page
 	pageFields := PageFieldStudios(PageParamStudios{
 		Sort: []StudioSort{StudioSortName},
 	}, "", fields...)
-	return c.page(page, perPage, pageFields)
+	return c.page(ctx, page, perPage, pageFields)
 }

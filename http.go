@@ -2,6 +2,7 @@ package verniy
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"errors"
 	"io/ioutil"
@@ -37,7 +38,7 @@ func (c *Client) handleError(body []byte) error {
 	return errors.New(strings.Join(errMsgs, " | "))
 }
 
-func (c *Client) post(query string, v map[string]interface{}, model interface{}) error {
+func (c *Client) post(ctx context.Context, query string, v map[string]interface{}, model interface{}) error {
 	d, err := json.Marshal(queryRequest{
 		Query:     query,
 		Variables: v,
@@ -46,7 +47,7 @@ func (c *Client) post(query string, v map[string]interface{}, model interface{})
 		return err
 	}
 
-	body, code, err := c.MakeRequest(d)
+	body, code, err := c.MakeRequest(ctx, d)
 	if err != nil {
 		return err
 	}
@@ -100,10 +101,10 @@ func (c *Client) post(query string, v map[string]interface{}, model interface{})
 //
 //  fmt.Println(code)
 //  fmt.Println(string(data))
-func (c *Client) MakeRequest(requestBody []byte) ([]byte, int, error) {
-	c.limiter.Take()
+func (c *Client) MakeRequest(ctx context.Context, requestBody []byte) ([]byte, int, error) {
+	c.Limiter.Take()
 
-	req, err := http.NewRequest(http.MethodPost, c.host, bytes.NewBuffer(requestBody))
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, c.Host, bytes.NewBuffer(requestBody))
 	if err != nil {
 		return nil, http.StatusInternalServerError, err
 	}
@@ -111,7 +112,7 @@ func (c *Client) MakeRequest(requestBody []byte) ([]byte, int, error) {
 	req.Header.Add("Content-Type", "application/json")
 	req.Header.Add("Accept", "application/json")
 
-	resp, err := c.http.Do(req)
+	resp, err := c.Http.Do(req)
 	if err != nil {
 		return nil, http.StatusInternalServerError, err
 	}

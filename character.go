@@ -1,5 +1,7 @@
 package verniy
 
+import "context"
+
 type characterResponse struct {
 	Data struct {
 		Character Character `json:"character"`
@@ -16,6 +18,11 @@ func (c *Client) characterQuery(params QueryParam, fields ...CharacterField) str
 
 // GetCharacter to get character data.
 func (c *Client) GetCharacter(id int, fields ...CharacterField) (*Character, error) {
+	return c.GetCharacterWithContext(context.Background(), id, fields...)
+}
+
+// GetCharacterWithContext to get character data with context.
+func (c *Client) GetCharacterWithContext(ctx context.Context, id int, fields ...CharacterField) (*Character, error) {
 	if len(fields) == 0 {
 		fields = []CharacterField{
 			CharacterFieldID,
@@ -43,7 +50,7 @@ func (c *Client) GetCharacter(id int, fields ...CharacterField) (*Character, err
 	}, fields...))
 
 	var d characterResponse
-	err := c.post(query, queryVariable{
+	err := c.post(ctx, query, queryVariable{
 		"id": id,
 	}, &d)
 	if err != nil {
@@ -55,7 +62,12 @@ func (c *Client) GetCharacter(id int, fields ...CharacterField) (*Character, err
 
 // GetCharacterAnime to get list of anime the character play.
 func (c *Client) GetCharacterAnime(id int, page int, perPage int) (*Character, error) {
-	return c.GetCharacter(id, CharacterFieldMedia(CharacterParamMedia{
+	return c.GetCharacterAnimeWithContext(context.Background(), id, page, perPage)
+}
+
+// GetCharacterAnimeWithContext to get list of anime the character play with context.
+func (c *Client) GetCharacterAnimeWithContext(ctx context.Context, id int, page int, perPage int) (*Character, error) {
+	return c.GetCharacterWithContext(ctx, id, CharacterFieldMedia(CharacterParamMedia{
 		Type:    MediaTypeAnime,
 		Page:    page,
 		PerPage: perPage,
@@ -87,7 +99,12 @@ func (c *Client) GetCharacterAnime(id int, page int, perPage int) (*Character, e
 
 // GetCharacterManga to get list of manga the character play.
 func (c *Client) GetCharacterManga(id int, page int, perPage int) (*Character, error) {
-	return c.GetCharacter(id, CharacterFieldMedia(CharacterParamMedia{
+	return c.GetCharacterMangaWithContext(context.Background(), id, page, perPage)
+}
+
+// GetCharacterMangaWithContext to get list of manga the character play with context.
+func (c *Client) GetCharacterMangaWithContext(ctx context.Context, id int, page int, perPage int) (*Character, error) {
+	return c.GetCharacterWithContext(ctx, id, CharacterFieldMedia(CharacterParamMedia{
 		Type:    MediaTypeManga,
 		Page:    page,
 		PerPage: perPage,
