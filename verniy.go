@@ -9,18 +9,18 @@ import (
 
 // Client is anilist client.
 type Client struct {
-	host    string
-	http    http.Client
-	limiter limiter.Limiter
+	Host    string
+	Http    http.Client
+	Limiter limiter.Limiter
 }
 
 // New to create new anilist client.
 func New() *Client {
 	return &Client{
-		host: "https://graphql.anilist.co",
-		http: http.Client{
+		Host: "https://graphql.anilist.co",
+		Http: http.Client{
 			Timeout: 10 * time.Second,
 		},
-		limiter: limiter.New(90, time.Minute),
+		Limiter: limiter.New(90, time.Minute),
 	}
 }
