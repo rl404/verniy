@@ -847,7 +847,7 @@ func FavouritesFieldManga(param FavouritesParamManga, field MediaConnectionField
 }
 
 // FavouritesFieldCharacters to generate favourites characters query.
-func FavouritesFieldCharacters(param FavouritesParamCharacters, field MediaConnectionField, fields ...MediaConnectionField) FavouritesField {
+func FavouritesFieldCharacters(param FavouritesParamCharacters, field CharacterConnectionField, fields ...CharacterConnectionField) FavouritesField {
 	str := []string{string(field)}
 	for _, f := range fields {
 		str = append(str, string(f))
@@ -859,7 +859,7 @@ func FavouritesFieldCharacters(param FavouritesParamCharacters, field MediaConne
 }
 
 // FavouritesFieldStaff to generate favourites staff query.
-func FavouritesFieldStaff(param FavouritesParamStaff, field MediaConnectionField, fields ...MediaConnectionField) FavouritesField {
+func FavouritesFieldStaff(param FavouritesParamStaff, field StaffConnectionField, fields ...StaffConnectionField) FavouritesField {
 	str := []string{string(field)}
 	for _, f := range fields {
 		str = append(str, string(f))
@@ -871,7 +871,7 @@ func FavouritesFieldStaff(param FavouritesParamStaff, field MediaConnectionField
 }
 
 // FavouritesFieldStudios to generate favourites studio query.
-func FavouritesFieldStudios(param FavouritesParamStudios, field MediaConnectionField, fields ...MediaConnectionField) FavouritesField {
+func FavouritesFieldStudios(param FavouritesParamStudios, field StudioConnectionField, fields ...StudioConnectionField) FavouritesField {
 	str := []string{string(field)}
 	for _, f := range fields {
 		str = append(str, string(f))
@@ -1928,4 +1928,41 @@ func PageFieldStaff(param PageParamStaff, field StaffField, fields ...StaffField
 		"id_not_in":  param.IDNotIn,
 		"sort":       param.Sort,
 	}, str...))
+}
+
+// MediaListCollectionField is fields for media list collection.
+type MediaListCollectionField string
+
+// Fields for MediaListCollectionField.
+const (
+	MediaListCollectionFieldHasNextChunk MediaListCollectionField = "hasNextChunk"
+)
+
+// MediaListGroupField is fields for media list group.
+type MediaListGroupField string
+
+// Fields for MediaListGroupField.
+const (
+	MediaListGroupFieldName                 MediaListGroupField = "name"
+	MediaListGroupFieldIsCustomList         MediaListGroupField = "isCustomList"
+	MediaListGroupFieldIsSplitCompletedList MediaListGroupField = "isSplitCompletedList"
+	MediaListGroupFieldStatus               MediaListGroupField = "status"
+)
+
+// MediaListGroupFieldEntries to generate media list group entries query.
+func MediaListGroupFieldEntries(field MediaListField, fields ...MediaListField) MediaListGroupField {
+	str := []string{string(field)}
+	for _, f := range fields {
+		str = append(str, string(f))
+	}
+	return MediaListGroupField(FieldObject("entries", nil, str...))
+}
+
+// MediaListCollectionFieldLists to generate media list collection lists query.
+func MediaListCollectionFieldLists(field MediaListGroupField, fields ...MediaListGroupField) MediaListCollectionField {
+	str := []string{string(field)}
+	for _, f := range fields {
+		str = append(str, string(f))
+	}
+	return MediaListCollectionField(FieldObject("lists", nil, str...))
 }
