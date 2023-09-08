@@ -1,3 +1,3 @@
 module github.com/rl404/verniy
 
-go 1.16
+go 1.20
