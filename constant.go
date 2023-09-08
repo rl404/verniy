@@ -383,3 +383,40 @@ const (
 	UserStatisticsSortMeanScore     UserStatisticsSort = "MEAN_SCORE"
 	UserStatisticsSortMeanScoreDesc UserStatisticsSort = "MEAN_SCORE_DESC"
 )
+
+// MediaListSort is sorting option for media list.
+type MediaListSort string
+
+// Options for MediaListSort.
+const (
+	MediaListSortMediaID               MediaListSort = "MEDIA_ID"
+	MediaListSortMediaIDDesc           MediaListSort = "MEDIA_ID_DESC"
+	MediaListSortScore                 MediaListSort = "SCORE"
+	MediaListSortScoreDesc             MediaListSort = "SCORE_DESC"
+	MediaListSortStatus                MediaListSort = "STATUS"
+	MediaListSortStatusDesc            MediaListSort = "STATUS_DESC"
+	MediaListSortProgress              MediaListSort = "PROGRESS"
+	MediaListSortProgressDesc          MediaListSort = "PROGRESS_DESC"
+	MediaListSortProgressVolumes       MediaListSort = "PROGRESS_VOLUMES"
+	MediaListSortProgressVolumesDesc   MediaListSort = "PROGRESS_VOLUMES_DESC"
+	MediaListSortRepeat                MediaListSort = "REPEAT"
+	MediaListSortRepeatDesc            MediaListSort = "REPEAT_DESC"
+	MediaListSortPriority              MediaListSort = "PRIORITY"
+	MediaListSortPriorityDesc          MediaListSort = "PRIORITY_DESC"
+	MediaListSortStartedOn             MediaListSort = "STARTED_ON"
+	MediaListSortStartedOnDesc         MediaListSort = "STARTED_ON_DESC"
+	MediaListSortFinishedOn            MediaListSort = "FINISHED_ON"
+	MediaListSortFinishedOnDesc        MediaListSort = "FINISHED_ON_DESC"
+	MediaListSortAddedTime             MediaListSort = "ADDED_TIME"
+	MediaListSortAddedTimeDesc         MediaListSort = "ADDED_TIME_DESC"
+	MediaListSortUpdatedTime           MediaListSort = "UPDATED_TIME"
+	MediaListSortUpdatedTimeDesc       MediaListSort = "UPDATED_TIME_DESC"
+	MediaListSortMediaTitleRomaji      MediaListSort = "MEDIA_TITLE_ROMAJI"
+	MediaListSortMediaTitleRomajiDesc  MediaListSort = "MEDIA_TITLE_ROMAJI_DESC"
+	MediaListSortMediaTitleEnglish     MediaListSort = "MEDIA_TITLE_ENGLISH"
+	MediaListSortMediaTitleEnglishDesc MediaListSort = "MEDIA_TITLE_ENGLISH_DESC"
+	MediaListSortMediaTitleNative      MediaListSort = "MEDIA_TITLE_NATIVE"
+	MediaListSortMediaTitleNativeDesc  MediaListSort = "MEDIA_TITLE_NATIVE_DESC"
+	MediaListSortMediaPopularity       MediaListSort = "MEDIA_POPULARITY"
+	MediaListSortMediaPopularityDesc   MediaListSort = "MEDIA_POPULARITY_DESC"
+)

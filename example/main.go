@@ -29,6 +29,15 @@ func main() {
 	// d, err := c.GetStaffAnime(106184, 1, 10)
 	// d, err := c.GetStaffManga(96868, 1, 10)
 
+	// d, err := c.GetUser("rl404")
+	// d, err := c.GetUserFavouriteAnime("Josh", 1, 10)
+	// d, err := c.GetUserFavouriteManga("Josh", 1, 10)
+	// d, err := c.GetUserFavouriteCharacters("ZaeWarudo", 1, 10)
+	// d, err := c.GetUserFavouriteStaff("ZaeWarudo", 1, 10)
+	// d, err := c.GetUserFavouriteStudios("ZaeWarudo", 1, 10)
+	// d, err := c.GetUserAnimeList("rl404")
+	// d, err := c.GetUserMangaList("rl404")
+
 	// d, err := c.GetStudio(803, 1, 10)
 	// d, err := c.GetStudios(1, 10)
 	// d, err := c.GetGenres()

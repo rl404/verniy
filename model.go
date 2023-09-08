@@ -65,6 +65,9 @@ type MediaTitle struct {
 	UserPreferred *string `json:"userPreferred"`
 }
 
+// FuzzyDateInt is 8 digit long date integer (YYYYMMDD).
+type FuzzyDateInt int
+
 // FuzzyDate is common date format.
 type FuzzyDate struct {
 	Year  *int `json:"year"`
@@ -362,7 +365,7 @@ type MediaList struct {
 	Status                *MediaListStatus `json:"status"`
 	Score                 *float64         `json:"score"`
 	Progress              *int             `json:"progress"`
-	ProgressVolume        *int             `json:"progressVolume"`
+	ProgressVolumes       *int             `json:"progressVolumes"`
 	Repeat                *int             `json:"repeat"`
 	Priority              *int             `json:"priority"`
 	Private               *bool            `json:"private"`
@@ -445,11 +448,11 @@ type MediaListTypeOptions struct {
 
 // Favourites is user's favourite model.
 type Favourites struct {
-	Anime     *MediaConnection     `json:"anime"`
-	Manga     *MediaConnection     `json:"manga"`
-	Character *CharacterConnection `json:"character"`
-	Staff     *StaffConnection     `json:"staff"`
-	Studios   *StudioConnection    `json:"studios"`
+	Anime      *MediaConnection     `json:"anime"`
+	Manga      *MediaConnection     `json:"manga"`
+	Characters *CharacterConnection `json:"characters"`
+	Staff      *StaffConnection     `json:"staff"`
+	Studios    *StudioConnection    `json:"studios"`
 }
 
 // UserStatisticTypes is user statistic data.
@@ -672,4 +675,20 @@ type ScoreDistribution struct {
 type StatusDistribution struct {
 	Status *MediaListStatus `json:"status"`
 	Amount *int             `json:"amount"`
+}
+
+// MediaListCollection is collection of media list.
+type MediaListCollection struct {
+	Lists        []MediaListGroup `json:"lists"`
+	User         *User            `json:"user"`
+	HasNextChunk *bool            `json:"hasNextChunk"`
+}
+
+// MediaListGroup is group of media list.
+type MediaListGroup struct {
+	Entries              []MediaList      `json:"entries"`
+	Name                 *string          `json:"name"`
+	IsCustomList         *bool            `json:"isCustomList"`
+	IsSplitCompletedList *bool            `json:"isSplitCompletedList"`
+	Status               *MediaListStatus `json:"status"`
 }

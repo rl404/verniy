@@ -325,3 +325,28 @@ type UserStatisticsParamStudios struct {
 	Limit int
 	Sort  []UserStatisticsSort
 }
+
+// MediaListCollectionParam is media list collection param.
+type MediaListCollectionParam struct {
+	UserID                   int
+	Username                 string
+	Type                     MediaType
+	Status                   MediaListStatus
+	Notes                    string
+	StartedAt                FuzzyDateInt
+	CompletedAt              FuzzyDateInt
+	ForceSingleCompletedList *bool
+	Chunk                    int
+	PerChunk                 int
+	StatusIn                 []MediaListStatus
+	StatusNotIn              []MediaListStatus
+	StatusNot                MediaListStatus
+	NotesLike                string
+	StartedAtGreater         FuzzyDateInt
+	StartedAtLesser          FuzzyDateInt
+	StartedAtLike            string
+	CompletedAtGreater       FuzzyDateInt
+	CompletedAtLesser        FuzzyDateInt
+	CompletedAtLike          string
+	Sort                     []MediaListSort
+}

@@ -23,6 +23,7 @@ This library is built using [Anilist official docs](https://github.com/AniList/A
 - Get studio list and their produced anime
 - Get genre list
 - Get tag list
+- Get user data (details, favorite, anime list, manga list)
 - Search anime
 - Search manga
 - Search character
