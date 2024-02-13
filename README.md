@@ -24,6 +24,7 @@ This library is built using [Anilist official docs](https://github.com/AniList/A
 - Get genre list
 - Get tag list
 - Get user data (details, favorite, anime list, manga list)
+- Get user data with OAuth2 Access Token for private profiles
 - Search anime
 - Search manga
 - Search character
@@ -114,6 +115,21 @@ Anilist has default rate limit **90 requests per minute**. If you go over
 the rate limit you'll receive a 1-minute timeout. But, verniy has
 a built-in rate limiter to prevent the requests going over the limit.
 It will put your request on hold until the limit is available again.
+
+### OAuth2 Authentication
+
+To access private user data, you need to use OAuth2 Access Token.
+
+Read the [Anilist OAuth2 documentation](https://anilist.gitbook.io/anilist-apiv2-docs/overview/oauth/getting-started) for more details.
+
+The OAuth2 Access Token can be set in the `Client` struct.
+
+```go
+c := verniy.New()
+c.AccessToken = "your-access-token"
+```
+
+This token could also be used to update user data in the future.
 
 ## Trivia
 
