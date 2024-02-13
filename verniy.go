@@ -9,9 +9,10 @@ import (
 
 // Client is anilist client.
 type Client struct {
-	Host    string
-	Http    http.Client
-	Limiter limiter.Limiter
+	Host        string
+	Http        http.Client
+	Limiter     limiter.Limiter
+	AccessToken string
 }
 
 // New to create new anilist client.
