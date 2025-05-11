@@ -38,6 +38,11 @@ func main() {
 	// d, err := c.GetUserAnimeList("rl404")
 	// d, err := c.GetUserMangaList("rl404")
 
+	// Authenticated requests for private profiles
+	// https://anilist.gitbook.io/anilist-apiv2-docs/overview/oauth/getting-started
+	// c.AccessToken = "FIXME"
+	// d, err := c.GetUserAnimeList("rl404")
+
 	// d, err := c.GetStudio(803, 1, 10)
 	// d, err := c.GetStudios(1, 10)
 	// d, err := c.GetGenres()

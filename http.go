@@ -111,6 +111,9 @@ func (c *Client) MakeRequest(ctx context.Context, requestBody []byte) ([]byte, i
 
 	req.Header.Add("Content-Type", "application/json")
 	req.Header.Add("Accept", "application/json")
+	if c.AccessToken != "" {
+		req.Header.Add("Authorization", "Bearer "+c.AccessToken)
+	}
 
 	resp, err := c.Http.Do(req)
 	if err != nil {
