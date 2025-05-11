@@ -68,7 +68,7 @@ func (c *Client) post(ctx context.Context, query string, v map[string]interface{
 //
 // Use this if you want to make custom request. Also, need to read the
 // docs of how to prepare the body request and read the response
-// (https://anilist.github.io/ApiV2-GraphQL-Docs/).
+// (https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co).
 //
 // Params requestBody is your data in JSON format. So, marshal your data
 // first before passing it to this function. And will return response body,
