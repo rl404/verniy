@@ -1,7 +1,7 @@
 # Verniy
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/rl404/verniy)](https://goreportcard.com/report/github.com/rl404/verniy)
 ![License: MIT](https://img.shields.io/github/license/rl404/verniy.svg)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/rl404/verniy)
 [![Go Reference](https://pkg.go.dev/badge/github.com/rl404/verniy.svg)](https://pkg.go.dev/github.com/rl404/verniy)
 
 _Verniy_ is an unofficial [Anilist](https://anilist.co) GraphQL API library using [Go](https://golang.org/). Verniy will generate graphql query string
@@ -33,7 +33,7 @@ This library is built using [Anilist official docs](https://github.com/AniList/A
 
 ## Installation
 
-```
+```sh
 go get github.com/rl404/verniy
 ```
 
@@ -43,7 +43,7 @@ go get github.com/rl404/verniy
 package main
 
 import (
-	"github.com/rl404/verniy"
+    "github.com/rl404/verniy"
 )
 
 func main() {
@@ -70,7 +70,7 @@ func main() {
 }
 ```
 
-*For more usage, please go to the [documentation](https://pkg.go.dev/github.com/rl404/verniy) or `example` folder.*
+_For more usage, please go to the [documentation](https://pkg.go.dev/github.com/rl404/verniy) or `example` folder._
 
 ### Functions
 
@@ -133,7 +133,7 @@ This token could also be used to update user data in the future.
 
 ## Trivia
 
-[Verniy](https://en.wikipedia.org/wiki/Japanese_destroyer_Hibiki_(1932))'s name is taken from japanese
+[Verniy](<https://en.wikipedia.org/wiki/Japanese_destroyer_Hibiki_(1932)>)'s name is taken from japanese
 destroyer. She is the 24th ship of the Fubuki class or the 2nd ship of the Akatsuki class. Originally,
 named Hibiki but later on, transferred to the Soviet Union and renamed to Верный (Verniy). Also,
 [exists](https://en.kancollewiki.net/Hibiki) in Kantai Collection games and anime.
